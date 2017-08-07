@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  {{> head}}
+  <body>
+    <header>
+      <h1>Add a Senator</h1>
+    </header>
+    <div class="navigation">
+      <a href="/">U.S. Senators</a>
+      <a href="/add_senator">Add Senator</a>
+    </div>
+    <div class="wrapper">
+      <form action="/add_senator" method="post">
+        <div class="fields" id="fields">
+          <span>New Record ID: </span>
+          <input type="text" name="id" value="{{newId}}" readonly>
+          <input type="text" placeholder="Senator's Name" name="name">
+          <input type="text" placeholder="Home State" name="state">
+          <select name="gender">
+            <option value="female">Female</option>
+            <option value="male">Male</option>
+          </select>
+          <select name="party">
+            <option value="Democrat">Democrat</option>
+            <option value="Independent">Independent</option>
+            <option value="Republican">Republican</option>
+          </select>
+          <input type="date" name="birthdate" value="1960-01-01">
+        </div>
+        <div class="footer">
+          <button>Save Senator</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

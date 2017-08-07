@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  {{> head}}
+  <body>
+    <header>
+      <h1>U.S. Senators</h1>
+    </header>
+    <div class="navigation">
+      <a href="/">U.S. Senators</a>
+      <a href="/add_senator">Add Senator</a>
+    </div>
+    <div class="container">
+      {{#senators}}
+        <div class="senator-card">
+          <h2>SEN. {{person.firstname}} {{person.lastname}}</h2>
+          <div class="address">
+            <p>{{extra.office}}</p>
+            <p>PH: {{phone}}</p>
+            <p>FAX: {{extra.fax}}</p>
+            <a class="contact" href="{{extra.contact_form}}">Contact Senator</a>
+          </div>
+          <footer>
+            <div class="button"><a href="/{{id}}">More Info</a></div>
+            <form action="/{{id}}" method="post">
+              <button class="delete-button"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+            </form>
+          </footer>
+        </div>
+      {{/senators}}
+    </div>
+  </body>
+</html>
